@@ -8,19 +8,21 @@
     <constant name="struts.devMode" value="true"/>
 
     <package name="struts-helloworld" extends="struts-default">
-
         <action name="index">
             <result>/index.jsp</result>
         </action>
-
         <action name="hello" class="org.tw.spike.struts.HelloWorldAction" method="execute">
             <result name="success">/helloworld.jsp</result>
         </action>
-
         <action name="registerx" class="org.tw.spike.struts.RegisterAction" method="execute">
             <result name="success">/thankyou.jsp</result>
         </action>
-
     </package>
 
+    <package name="struts-helloworld-json" extends="json-default">
+        <action name="testjson" class="org.tw.spike.struts.JsonAction" method="execute">
+            <interceptor-ref name="json"/>
+            <result type="json"/>
+        </action>
+    </package>
 </struts>
